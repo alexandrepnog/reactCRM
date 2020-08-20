@@ -1,0 +1,156 @@
+{
+  "sistemas": [
+    {
+      "id": 1,
+      "nome": "SIAC",
+      "ativo": true,
+      "createdAt": "2020-07-27"
+    },
+    {
+      "id": 2,
+      "nome": "SIAD",
+      "ativo": false,
+      "createdAt": "2020-07-27"
+    },
+    {
+      "nome": "TESTE",
+      "ativo": false,
+      "id": 5
+    },
+    {
+      "nome": "TESTE 99 99 99",
+      "ativo": true,
+      "id": 8
+    },
+    {
+      "nome": "TESTE 10 10 10",
+      "ativo": true,
+      "id": 9
+    },
+    {
+      "nome": "TESTE 11 11 11",
+      "ativo": true,
+      "id": 10
+    },
+    {
+      "nome": "TESTE 12 12 12",
+      "ativo": true,
+      "id": 11
+    },
+    {
+      "nome": "TESTE 13 13 13",
+      "ativo": true,
+      "id": 12
+    },
+    {
+      "nome": "TESTE 15 15 15",
+      "ativo": true,
+      "id": 13
+    },
+    {
+      "nome": "TESTE 16 16 16",
+      "ativo": true,
+      "id": 14
+    }
+  ],
+  "cidades": [
+    {
+      "nome": "CIDADE 1",
+      "cidadeId": 1
+    },
+    {
+      "nome": "CIDADE 2",
+      "cidadeId": 2
+    },
+    {
+      "nome": "CIDADE 3",
+      "cidadeId": 3
+    }
+  ],
+  "usuarios": [
+    {
+      "cidade": {
+        "cidadeId": 3,
+        "nome": "CIDADE 3"
+      },
+      "senha": "TESTESS",
+      "login": "TESTE",
+      "nome": "TESTE",
+      "ativo": false,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 1
+    },
+    {
+      "cidade": {
+        "cidadeId": 2,
+        "nome": "CIDADE 2"
+      },
+      "senha": "senhas",
+      "login": "alexandrepnog@gmail.com",
+      "nome": "ALEXANDRE",
+      "ativo": false,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 2
+    },
+    {
+      "senha": "TESTES",
+      "login": "dfasdfdsfasd",
+      "nome": "TESTE",
+      "ativo": true,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 3
+    },
+    {
+      "nome": "TESTE 11 11 11",
+      "ativo": true,
+      "login": "teste@teste.com.br",
+      "senha": "123456",
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 4
+    },
+    {
+      "nome": "TESTE 22 22 22",
+      "ativo": true,
+      "login": "teste2@gmail.com",
+      "senha": "123456",
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 5
+    },
+    {
+      "senha": "senhas",
+      "login": "teste2@gmail.com",
+      "nome": "TESTE 33 33 33",
+      "ativo": true,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 6
+    },
+    {
+      "cidade": {
+        "cidadeId": 3,
+        "nome": "CIDADE 3"
+      },
+      "senha": "senhas",
+      "login": "teste4@gmail.com",
+      "nome": "TESTE 44 44 44",
+      "ativo": false,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 7
+    },
+    {
+      "senha": "123456",
+      "login": "teste5@gmail.com",
+      "nome": "TESTE 55 55 55",
+      "ativo": true,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 8
+    },
+    {
+      "senha": "123456",
+      "login": "teste6@gmail.com",
+      "nome": "TESTE 66 66 66",
+      "ativo": true,
+      "dataAniversario": "2020-08-17T03:00:00.000Z",
+      "id": 9
+    }
+  ]
+}
