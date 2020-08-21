@@ -2,7 +2,7 @@ import 'react-tabulator/lib/css/semantic-ui/tabulator_semantic-ui.min.css';
 
 import { yupResolver } from '@hookform/resolvers';
 import { Box, Button, Dialog, DialogContent, Fab, FormControlLabel, Paper, Switch, TextField, Typography } from '@material-ui/core';
-import axios, { AxiosRequestConfig } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
@@ -18,7 +18,7 @@ const Sistemas = () => {
 
     const [lista, setLista] = useState<ISistemasFormData[]>([]);
 
-    const { register, handleSubmit, reset, errors, formState, setValue, control } = useForm<ISistemasFormData>({
+    const { handleSubmit, reset, errors, formState, control } = useForm<ISistemasFormData>({
         defaultValues: helper.defaultValues,
         resolver: yupResolver(helper.schema),
     });
@@ -118,7 +118,7 @@ const Sistemas = () => {
             response = await apiClient().put(`sistemas/${data.id}`, data);
 
             const index = lista.findIndex(function (sistema) {
-                return data.id == sistema.id;
+                return data.id === sistema.id;
             });
             lista.splice(index, 1, response?.data);
         }

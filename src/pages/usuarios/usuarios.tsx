@@ -186,7 +186,7 @@ const Usuarios = () => {
             response = await apiClient().put(`usuarios/${data._id}`, data);
 
             const index = lista.findIndex(function (sistema) {
-                return data._id == sistema._id;
+                return data._id === sistema._id;
             });
             lista.splice(index, 1, response?.data);
         }
