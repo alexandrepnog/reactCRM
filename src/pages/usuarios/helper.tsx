@@ -29,20 +29,20 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export interface IUsuariosFormData {
-    id?: number;
+    _id?: string;
     dataAniversario: Date;
     nome: string;
     ativo: boolean;
     login: string;
     senha: string;
     cidade?: {
-        cidadeId: number;
+        _id: string;
         nome: string;
     };
 }
 
 const schema = yup.object().shape<IUsuariosFormData>({
-    id: yup.number(),
+    _id: yup.string(),
     dataAniversario: yup.date().required('A data de aniversário do usuário deve ser informado'),
     ativo: yup.boolean().required(),
     nome: yup
@@ -59,7 +59,7 @@ const schema = yup.object().shape<IUsuariosFormData>({
         .min(6, 'A senha deve conter no mínimo 6 caracteres'),
     //cidade: yup.string().required('A cidade do usuário deve ser informada.').uppercase().trim()
     cidade: yup.object().shape({
-        cidadeId: yup.number().required(),
+        _id: yup.string().required(),
         nome: yup.string().required('O nome da cidade deve ser informado.'),
     }),
 });
@@ -70,7 +70,7 @@ const defaultValues: IUsuariosFormData = {
     ativo: true,
     login: '',
     senha: '',
-    cidade: { cidadeId: 0, nome: '' },
+    cidade: { _id: '', nome: '' },
 };
 
 export default {

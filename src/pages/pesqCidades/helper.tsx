@@ -29,12 +29,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export interface IPesqCidadesFormData {
-    cidadeId?: number;
+    _id?: string;
     nome: string;
 }
 
 const schema = yup.object().shape<IPesqCidadesFormData>({
-    cidadeId: yup.number(),
+    _id: yup.string(),
     nome: yup
         .string()
         .uppercase()
@@ -44,7 +44,7 @@ const schema = yup.object().shape<IPesqCidadesFormData>({
 });
 
 const defaultValues: IPesqCidadesFormData = {   
-    cidadeId: 0,
+    _id: '',
     nome: ''
 };
 

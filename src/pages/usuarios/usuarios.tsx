@@ -111,7 +111,7 @@ const Usuarios = () => {
 
         if (!(await message.question(`Confirma a exclusão do usuario : ${data.nome}`))) return;
 
-        await apiClient().delete(`usuarios/${data.id}`);
+        await apiClient().delete(`usuarios/${data._id}`);
 
         cell.getRow().delete();
 
@@ -135,7 +135,7 @@ const Usuarios = () => {
             cellClick: editFunc,
             width: 60,
         },
-        { title: 'Código', field: 'id', hozAlign: 'left', width: 95 },
+        { title: 'Código', field: '_id', hozAlign: 'left', width: 95 },
         { title: 'Name', field: 'nome', width: 240 },
         { title: 'Login', field: 'login', width: 240 },
         { title: 'Ativo', field: 'ativo', formatter: 'tickCross', width: 90 },
@@ -145,7 +145,7 @@ const Usuarios = () => {
         await apiClient()
             .get('usuarios')
             .then(values => {
-                setLista(values.data);
+                setLista(values.data.docs);
             });
     };
 
@@ -171,7 +171,7 @@ const Usuarios = () => {
         // simulando uma "demora" na resposta do backend
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        const inserindo = !data.id;
+        const inserindo = !data._id;
 
         let response: AxiosRequestConfig | undefined = undefined;
 
@@ -182,7 +182,7 @@ const Usuarios = () => {
             response = await apiClient().put(`usuarios/${data.id}`, data);
 
             const index = lista.findIndex(function (sistema) {
-                return data.id == sistema.id;
+                return data._id == sistema._id;
             });
             lista.splice(index, 1, response?.data);
         }
@@ -250,8 +250,8 @@ const Usuarios = () => {
                                         type='hidden'
                                         className={classes.textField}
                                         variant='outlined'
-                                        error={!!errors.cidade?.cidadeId}
-                                        helperText={errors.cidade?.cidadeId?.message}
+                                        error={!!errors.cidade?._id}
+                                        helperText={errors.cidade?._id?.message}
                                         fullWidth
                                         required
                                     />
