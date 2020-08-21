@@ -45,7 +45,7 @@ const PesqCidades = (props: any) => {
             cellClick: editFunc,
             width: 60,
         },
-        { title: 'Código', field: 'cidadeId', hozAlign: 'left', width: 95 },
+        { title: 'Código', field: '_id', hozAlign: 'left', width: 95 },
         { title: 'Name', field: 'nome', width: 240 },
     ];
 
@@ -53,7 +53,7 @@ const PesqCidades = (props: any) => {
         await apiClient()
             .get('cidades')
             .then(values => {
-                setLista(values.data);
+                setLista(values.data.docs);
             });
     };
 

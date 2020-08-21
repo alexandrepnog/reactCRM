@@ -28,30 +28,33 @@ class Message {
     });
     return result.value;
   }
-
   toastSuccess(text) {
     this.toast.fire({
       icon: 'success',
       title: text
     });
+    document.querySelector('.swal2-container').style.zIndex = 9999;
   }
   toastError(text) {
     this.toast.fire({
       icon: 'error',
       title: text
     });
+    document.querySelector('.swal2-container').style.zIndex = 9999;
   }
   toastWarning(text) {
     this.toast.fire({
       icon: 'warning',
       title: text
     });
+    document.querySelector('.swal2-container').style.zIndex = 9999;
   }
   toastInfo(text) {
     this.toast.fire({
       icon: 'info',
       title: text
     });
+    document.querySelector('.swal2-container').style.zIndex = 9999;
   }
 }
 

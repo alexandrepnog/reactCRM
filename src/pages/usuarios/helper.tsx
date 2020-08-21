@@ -59,7 +59,7 @@ const schema = yup.object().shape<IUsuariosFormData>({
         .min(6, 'A senha deve conter no mínimo 6 caracteres'),
     //cidade: yup.string().required('A cidade do usuário deve ser informada.').uppercase().trim()
     cidade: yup.object().shape({
-        _id: yup.string().required(),
+        _id: yup.string().required('O código da cidade deve ser informado.'),
         nome: yup.string().required('O nome da cidade deve ser informado.'),
     }),
 });

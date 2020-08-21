@@ -117,7 +117,7 @@ const Usuarios = () => {
 
         reset({ ...helper.defaultValues });
 
-        alert('Sistema excluido com sucesso!');
+        message.toastSuccess('Sistema excluído com sucesso!');
     }
 
     const columns = [
@@ -151,7 +151,7 @@ const Usuarios = () => {
 
     function retornoPesquisaCidade(data: any) {
         
-        setValue('cidade.cidadeId', data.cidadeId);
+        setValue('cidade._id', data._id);
         setValue('cidade.nome', data.nome);
     }
 
@@ -169,9 +169,13 @@ const Usuarios = () => {
         console.log(data);
 
         // simulando uma "demora" na resposta do backend
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
 
         const inserindo = !data._id;
+
+        console.log(inserindo);
+
+        console.log(data);
 
         let response: AxiosRequestConfig | undefined = undefined;
 
@@ -179,7 +183,7 @@ const Usuarios = () => {
             response = await apiClient().post('usuarios', data);
             setLista([...lista, response?.data]);
         } else {
-            response = await apiClient().put(`usuarios/${data.id}`, data);
+            response = await apiClient().put(`usuarios/${data._id}`, data);
 
             const index = lista.findIndex(function (sistema) {
                 return data._id == sistema._id;
@@ -257,7 +261,7 @@ const Usuarios = () => {
                                     />
                                 }
                                 control={control}
-                                name='cidade.cidadeId'
+                                name='cidade._id'
                                 defaultValue=''
                             />
 
